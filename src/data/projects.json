@@ -1,0 +1,50 @@
+[
+  {
+    "name": "proserv",
+    "description": "Proyecto Proserv.",
+    "image": "/images/proserv.png",
+    "technologies": ["Astro"],
+    "demo": "https://github.com/nicolas27-10/proserv",
+    "repo": "https://github.com/nicolas27-10/proserv"
+  },
+  {
+    "name": "vic-ing-astro",
+    "description": "Página web de la empresa de seguridad - VIC Ingeniería y Seguridad SPA.",
+    "image": "/images/vic-ing-astro.png",
+    "technologies": ["Astro"],
+    "demo": "https://github.com/nicolas27-10/vic-ing-astro",
+    "repo": "https://github.com/nicolas27-10/vic-ing-astro"
+  },
+  {
+    "name": "coro-mozart-historico",
+    "description": "Sitio web histórico del Coro Mozart.",
+    "image": "/images/coro-mozart-historico.png",
+    "technologies": ["Astro"],
+    "demo": "https://github.com/nicolas27-10/coro-mozart-historico",
+    "repo": "https://github.com/nicolas27-10/coro-mozart-historico"
+  },
+  {
+    "name": "Pagina-Pizza",
+    "description": "Landing page para pizzería.",
+    "image": "/images/pagina-pizza.png",
+    "technologies": ["Astro"],
+    "demo": "https://github.com/nicolas27-10/Pagina-Pizza",
+    "repo": "https://github.com/nicolas27-10/Pagina-Pizza"
+  },
+  {
+    "name": "Gestor-pagos",
+    "description": "Aplicación para la gestión de pagos.",
+    "image": "/images/gestor-pagos.png",
+    "technologies": ["Astro"],
+    "demo": "https://github.com/nicolas27-10/Gestor-pagos",
+    "repo": "https://github.com/nicolas27-10/Gestor-pagos"
+  },
+  {
+    "name": "dev-gram2.0",
+    "description": "Proyecto colaborativo de mensajería (fork de cris-avi/dev-gram2.0).",
+    "image": "/images/dev-gram2.0.png",
+    "technologies": ["TypeScript"],
+    "demo": "https://github.com/cris-avi/dev-gram2.0",
+    "repo": "https://github.com/cris-avi/dev-gram2.0"
+  }
+] 
