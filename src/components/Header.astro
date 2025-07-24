@@ -1,0 +1,162 @@
+---
+---
+<header class="w-full fixed top-0 left-0 z-50 bg-[#18181b]/90 backdrop-blur border-b-4 border-[#a78bfa]">
+  <nav class="max-w-6xl mx-auto flex justify-between items-center py-2 px-4 md:px-8">
+    <a href="/" class="text-2xl font-extrabold text-[#a78bfa]">
+      <img src="/images/profile.jpg" alt="Nicolás Castillo" class="w-10 h-10 md:w-16 md:h-16 rounded-full" />
+    </a>
+    <ul class="flex gap-6 text-[#d1d5db] md:text-lg ">
+      <li><a id="nav-hero" href="#hero" class="hover:text-[#a78bfa] border-b-2 border-transparent hover:border-[#a78bfa] transition">Inicio</a></li>
+      <li><a id="nav-projects" href="#projects" class="hover:text-[#a78bfa] border-b-2 border-transparent hover:border-[#a78bfa] transition">Proyectos</a></li>
+      <li><a id="nav-about" href="#about" class="hover:text-[#a78bfa] border-b-2 border-transparent hover:border-[#a78bfa] transition">Sobre mí</a></li>
+      <li><a id="nav-contact" href="#contact" class="hover:text-[#a78bfa] border-b-2 border-transparent hover:border-[#a78bfa] transition">Contacto</a></li>
+    </ul>
+  </nav>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = ['hero', 'projects', 'about', 'contact'];
+      const navLinks = sections.map(id => document.getElementById(`nav-${id}`));
+      const sectionEls = sections.map(id => document.getElementById(id));
+      let currentActive = null;
+      let atBottom = false;
+      function activateSectionByHeader() {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        let found = false;
+        let closestSection = null;
+        let minTop = Infinity;
+        sectionEls.forEach((el, i) => {
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (!found && rect.top <= headerHeight && rect.bottom > headerHeight) {
+              closestSection = sections[i];
+              found = true;
+            } else if (!found) {
+              const topDist = Math.abs(rect.top - headerHeight);
+              if (topDist < minTop) {
+                minTop = topDist;
+                closestSection = sections[i];
+              }
+            }
+          }
+        });
+        if (closestSection) {
+          navLinks.forEach((link, i) => {
+            if (link) {
+              if (sections[i] === closestSection) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            }
+          });
+          currentActive = closestSection;
+        }
+      }
+      function getObserverOptions() {
+        const isMobile = window.innerWidth < 768;
+        return {
+          threshold: isMobile ? 0.1 : 0.3,
+          rootMargin: isMobile ? '-10% 0px -10% 0px' : '-20% 0px -20% 0px'
+        };
+      }
+      let observer = new window.IntersectionObserver((entries) => {
+        if (atBottom) return;
+        let mostVisible = null;
+        let maxTop = -Infinity;
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const rect = entry.target.getBoundingClientRect();
+            if (rect.top > 0 && rect.top > maxTop) {
+              mostVisible = entry.target.id;
+              maxTop = rect.top;
+            } else if (rect.top <= 0 && rect.bottom > 0) {
+              mostVisible = entry.target.id;
+              maxTop = 0;
+            }
+          }
+        });
+        if (mostVisible) {
+          navLinks.forEach((link, i) => {
+            if (link) {
+              if (sections[i] === mostVisible) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            }
+          });
+          currentActive = mostVisible;
+        }
+      }, getObserverOptions());
+      sectionEls.forEach(el => { if (el) observer.observe(el); });
+
+      // Re-crear el observer al cambiar el tamaño de pantalla
+      window.addEventListener('resize', () => {
+        observer.disconnect();
+        observer = new window.IntersectionObserver((entries) => {
+          if (atBottom) return;
+          let mostVisible = null;
+          let maxTop = -Infinity;
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const rect = entry.target.getBoundingClientRect();
+              if (rect.top > 0 && rect.top > maxTop) {
+                mostVisible = entry.target.id;
+                maxTop = rect.top;
+              } else if (rect.top <= 0 && rect.bottom > 0) {
+                mostVisible = entry.target.id;
+                maxTop = 0;
+              }
+            }
+          });
+          if (mostVisible) {
+            navLinks.forEach((link, i) => {
+              if (link) {
+                if (sections[i] === mostVisible) {
+                  link.classList.add('active');
+                } else {
+                  link.classList.remove('active');
+                }
+              }
+            });
+            currentActive = mostVisible;
+          }
+        }, getObserverOptions());
+        sectionEls.forEach(el => { if (el) observer.observe(el); });
+      });
+
+      // Detectar scroll al fondo de la página
+      window.addEventListener('scroll', () => {
+        const scrollBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
+        if (scrollBottom && !atBottom) {
+          atBottom = true;
+          navLinks.forEach((link, i) => {
+            if (link) {
+              if (sections[i] === 'contact') {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            }
+          });
+        } else if (!scrollBottom && atBottom) {
+          atBottom = false;
+          observer.takeRecords();
+          navLinks.forEach((link, i) => {
+            if (link && sections[i] === 'contact') {
+              link.classList.remove('active');
+            }
+          });
+          activateSectionByHeader();
+        }
+      });
+    });
+  </script>
+  <style>
+    a.active {
+      color: #a78bfa !important;
+      border-bottom: 2px solid #a78bfa !important;
+    }
+  </style>
+</header> 

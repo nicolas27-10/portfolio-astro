@@ -1,0 +1,24 @@
+---
+import projects from '../data/projects.json';
+---
+<section id="projects" class="max-w-6xl mx-auto py-16 px-4 md:px-8">
+  <h2 class="text-3xl font-bold mb-8 text-[#a78bfa]">Proyectos</h2>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {projects.map(project => (
+      <div class="bg-[#18181b] border-2 border-[#a78bfa] shadow-[0_4px_32px_0_rgba(124,58,237,0.35)] rounded-xl p-6 flex flex-col gap-4 hover:scale-[1.04] hover:shadow-[0_8px_40px_0_rgba(124,58,237,0.45)] transition-transform">
+        <img src={project.image} alt={project.name} class="w-full h-40 object-cover rounded-lg mb-4 bg-[#c4b5fd]/10" loading="lazy" />
+        <h3 class="text-xl font-bold text-[#a78bfa] mb-2">{project.name}</h3>
+        <p class="text-[#d1d5db] mb-2">{project.description}</p>
+        <div class="flex flex-wrap gap-2 mb-2">
+          {project.technologies.map(tech => (
+            <span class="bg-[#a78bfa] text-[#4c1d95] px-2 py-1 rounded text-xs font-medium">{tech}</span>
+          ))}
+        </div>
+        <div class="flex gap-4 mt-auto">
+          {project.demo && <a href={project.demo} target="_blank" class="bg-[#7c3aed] text-white px-4 py-1 rounded font-bold shadow hover:bg-[#4c1d95] transition">Demo</a>}
+          {project.repo && <a href={project.repo} target="_blank" class="text-[#a78bfa] underline hover:text-[#7c3aed]">Repo</a>}
+        </div>
+      </div>
+    ))}
+  </div>
+</section> 
