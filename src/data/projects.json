@@ -1,50 +1,50 @@
 [
   {
-    "name": "proserv",
-    "description": "Proyecto Proserv.",
+    "name": "Sitio web ProServ Servicios Profesionales",
+    "description": "Sitio web para la empresa de consultoría y control de plagas ProServ Servicios Profesionales SpA.",
     "image": "/images/proserv.png",
-    "technologies": ["Astro"],
-    "demo": "https://github.com/nicolas27-10/proserv",
+    "technologies": ["Astro", "TailwindCSS", "TypeScript"],
+    "demo": "https://proserv-chile.netlify.app",
     "repo": "https://github.com/nicolas27-10/proserv"
   },
   {
-    "name": "vic-ing-astro",
-    "description": "Página web de la empresa de seguridad - VIC Ingeniería y Seguridad SPA.",
-    "image": "/images/vic-ing-astro.png",
-    "technologies": ["Astro"],
-    "demo": "https://github.com/nicolas27-10/vic-ing-astro",
+    "name": "Sitio web VIC Ingeniería y Seguridad SpA",
+    "description": "Página web de la empresa de seguridad VIC Ingeniería y Seguridad SpA.",
+    "image": "/images/vic.png",
+    "technologies": ["Astro", "TailwindCSS", "TypeScript", "JavaScript"],
+    "demo": "https://vicseguridad.cl",
     "repo": "https://github.com/nicolas27-10/vic-ing-astro"
   },
   {
-    "name": "coro-mozart-historico",
-    "description": "Sitio web histórico del Coro Mozart.",
-    "image": "/images/coro-mozart-historico.png",
-    "technologies": ["Astro"],
-    "demo": "https://github.com/nicolas27-10/coro-mozart-historico",
+    "name": "Página web coro Mozart Historico",
+    "description": "Sitio web para el Coro de cámara Mozart histórico.",
+    "image": "/images/mozart.png",
+    "technologies": ["Astro", "TailwindCSS"],
+    "demo": "https://mozarthistorico.cl",
     "repo": "https://github.com/nicolas27-10/coro-mozart-historico"
   },
   {
-    "name": "Pagina-Pizza",
-    "description": "Landing page para pizzería.",
-    "image": "/images/pagina-pizza.png",
-    "technologies": ["Astro"],
-    "demo": "https://github.com/nicolas27-10/Pagina-Pizza",
+    "name": "Pagina web El Secreto de la Z",
+    "description": "Landing page para pizzería artesanal El Secreto de la Z.",
+    "image": "/images/elsecretodelaz.png",
+    "technologies": ["Astro", "TailwindCSS"],
+    "demo": "https://elsecretodelaz.netlify.app",
     "repo": "https://github.com/nicolas27-10/Pagina-Pizza"
   },
   {
-    "name": "Gestor-pagos",
-    "description": "Aplicación para la gestión de pagos.",
-    "image": "/images/gestor-pagos.png",
-    "technologies": ["Astro"],
-    "demo": "https://github.com/nicolas27-10/Gestor-pagos",
+    "name": "Gestor de alumnos de KSK Dojo Shiró",
+    "description": "Aplicación para la gestión de pagos y alumnos de la escuela de artes marciales KenShinKan Dojo Shiró.",
+    "image": "/images/ksk.png",
+    "technologies": ["Astro", "TailwindCSS", "TypeScript", "Firebase"],
+    "demo": "https://gestordepagosksk.netlify.app",
     "repo": "https://github.com/nicolas27-10/Gestor-pagos"
   },
   {
-    "name": "dev-gram2.0",
-    "description": "Proyecto colaborativo de mensajería (fork de cris-avi/dev-gram2.0).",
-    "image": "/images/dev-gram2.0.png",
-    "technologies": ["TypeScript"],
-    "demo": "https://github.com/cris-avi/dev-gram2.0",
+    "name": "DevGram App",
+    "description": "Proyecto colaborativo de mensajería para la comunidad de desarrolladores. En Desarrollo.",
+    "image": "/images/devgram.png",
+    "technologies": ["Ionic", "Angular", "TypeScript", "JavaScript", "TailwindCSS", "Firebase"],
+    "demo": "https://dev-gram-app.netlify.app",
     "repo": "https://github.com/cris-avi/dev-gram2.0"
   }
 ] 
