@@ -18,7 +18,11 @@ export default {
         muted: '#d1d5db',
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        'onest': ['Onest Variable', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }; 

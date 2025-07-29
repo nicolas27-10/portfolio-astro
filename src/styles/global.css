@@ -1,6 +1,11 @@
 @import "tailwindcss";
+@import '@fontsource-variable/onest';
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem; /* Ajusta según la altura del header */
+}
+
+body {
+  font-family: 'Onest Variable', sans-serif;
 }
